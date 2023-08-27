@@ -13,82 +13,42 @@
 
   <body>
     <header>
-      <nav class="navber navber-expand-lg navber-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navber-brand" href="https://2a55bfd4e3f946fe8cf1b0c80da7c0ae.vfs.cloud9.ap-northeast-1.amazonaws.com/">
+          <a class="navbar-brand" href="https://2a55bfd4e3f946fe8cf1b0c80da7c0ae.vfs.cloud9.ap-northeast-1.amazonaws.com/">
             <span>Bookers</span>
           </a>
-          <button class="navber-toggler" type="button" data-toggle="collapse" data-target="#navberNavDropdown" aria-controls="navberNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navber-toggler-icon"></span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="navber-collapse show" id="navberNavDropdown" style>
-            <ul class="navber-nav ml-auto">
+          <div class="navbar-collapse show" id="navbarNavDropdown" style>
+            <ul class="navbar-nav ml-auto">
               <li>
-                <a class="nav-link text-light" href="">
-                  <i class="fas fa-home" aria-hidden="true"></i>
-                  Home
-                </a>
+                <%= link_to '' ,class: ""%>
               </li>
               <li>
-                <a class="nav-link text-light" href="/users">
-                  <i class="fas fa-users" aria-hidden="true"></i>
-                  Users
-                </a>
+                
               </li>
               <li>
-                <a class="nav-link text-light" href="/books">
-                  <i class="fas fa-book-open" aria-hidden="true"></i>
-                  Books
-                </a>
+                
               </li>
               <li>
-                <a class="nav-link text-light" rel="" data-method="delete" href="/users/sign_out">
-                  <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-                  Log out
-                </a>
+                
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main>
-      <p id="notice"></p>
-      <div class="container">
+<%= yield %>
+    <footer>
+      <div class="container mt-5">
         <div class="row">
-          <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-            <h1>
-              welcome to
-              <i class="fas fa-book" aria-hidden="true"></i>
-              <strong>Bookers</strong>
-              !!
-            </h1>
-            <p>
-              in
-              <i class="fas fa-book" aria-hidden="true"></i>
-              <strong>Bookers</strong>
-              ,
-            </p>
-            <p>
-              you can share and exchange your opinions , inpressions , and emotions
-            </p>
-            <p>about various books!</p>
-            <div class="btn-wrapper col-10 mx-auto">
-              <div class="row">
-                <% if user_signed_in? %>
-                  <li>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-                  </li>
-
-                <% else %>
-                  <li>
-                    <%= link_to "Log in", new_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "Sign up", new_user_session_path %>
-                  </li>
-                <% end %>
-    </main>
-    <%= yield %>
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
